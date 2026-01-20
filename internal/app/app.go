@@ -145,7 +145,6 @@ func (m *AppModel) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 		return m, tea.Batch(cmds...)
 	}
 
-	// When watchlist is in search mode, let it handle all key events
 	if m.watchlist.IsSearching() {
 		m.watchlist, cmd = m.watchlist.Update(msg)
 		cmds = append(cmds, cmd)
